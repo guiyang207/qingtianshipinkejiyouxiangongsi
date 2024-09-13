@@ -330,3 +330,57 @@ main {
         font-size: 14px;
     }
 }
+/* 响应式设计 - 手机端优化 */
+@media (max-width: 768px) {
+    /* 导航栏调整 */
+    .navbar-list {
+        flex-direction: column; /* 导航项纵向排列 */
+        align-items: center; /* 居中对齐 */
+        gap: 10px; /* 增加导航项间距 */
+    }
+
+    /* 图片和轮播图 */
+    #carousel {
+        width: 100%; /* 轮播图占满屏幕宽度 */
+        height: auto; /* 高度自适应 */
+    }
+
+    .carousel-item img {
+        object-fit: cover; /* 确保图片不变形 */
+    }
+
+    /* 字体和间距 */
+    body {
+        font-size: 1rem; /* 使用相对单位，适应屏幕尺寸 */
+        line-height: 1.5; /* 增加行高 */
+    }
+
+    /* 按钮和交互元素 */
+    .carousel-controls button {
+        padding: 12px 24px; /* 增大按钮尺寸 */
+        font-size: 1rem; /* 调整按钮字体大小 */
+    }
+}
+
+/* 调整布局对齐 */
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+/* 确保轮播图和新闻资讯部分左右并列 */
+.content-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.carousel-section {
+    flex: 0 0 70%; /* 轮播图部分占70% */
+}
+
+.news-section {
+    flex: 0 0 28%; /* 新闻资讯部分占30% */
+}
