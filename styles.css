@@ -1,0 +1,332 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f4f4f4;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.company-name {
+    flex-grow: 1;
+}
+
+.search {
+    padding: 5px;
+    width: 200px;
+}
+
+/* 导航栏样式 */
+.navbar {
+    background-color: #9ac7ad; /* 导航栏背景颜色 */
+    padding: 10px 20px; /* 内边距 */
+}
+
+/* 导航列表样式 */
+.navbar-list {
+    display: flex; /* 使用Flexbox布局 */
+    gap: 20px; /* 设置文字间隔 */
+    list-style: none; /* 去掉默认的列表样式 */
+    padding: 0;
+    margin: 0;
+}
+
+/* 导航栏样式 */
+.navbar {
+    background-color: #2a814e; /* 导航栏背景颜色 */
+    padding: 10px 20px; /* 导航栏上下和左右的内边距 */
+}
+
+/* 导航列表样式 */
+.navbar-list {
+    display: flex; /* 使用Flexbox布局 */
+    justify-content: space-between; /* 在导航栏中均匀分布 */
+    align-items: center; /* 垂直居中对齐 */
+    list-style: none; /* 去掉默认的列表样式 */
+    padding: 0; /* 去掉默认的内边距 */
+    margin: 0; /* 去掉默认的外边距 */
+}
+
+/* 导航项样式 */
+.navbar-item {
+    position: relative; /* 相对定位用于动画 */
+}
+
+/* 链接样式 */
+.navbar-item a {
+    text-decoration: none; /* 去掉下划线 */
+    color: #fff; /* 文字颜色 */
+    font-size: 18px; /* 文字大小 */
+    padding: 10px 15px; /* 内边距 */
+    transition: color 0.3s ease, transform 0.3s ease; /* 添加过渡效果 */
+    display: block; /* 链接填满导航项 */
+    text-align: center; /* 文字居中 */
+}
+
+/* 链接悬停效果 */
+.navbar-item a:hover {
+    color: #ffda79; /* 悬停时文字颜色变化 */
+    transform: translateY(-5px); /* 悬停时文字上移效果 */
+}
+
+/* 悬停动画下划线效果 */
+.navbar-item a::after {
+    content: ''; /* 添加伪元素 */
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #ffda79; /* 下划线颜色 */
+    transform: scaleX(0); /* 初始状态下缩放为0 */
+    transition: transform 0.3s ease; /* 添加动画过渡 */
+}
+
+/* 悬停时下划线动画 */
+.navbar-item a:hover::after {
+    transform: scaleX(1); /* 悬停时下划线展开 */
+}
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .navbar-list {
+        flex-direction: column; /* 手机端将导航变为纵向排列 */
+        gap: 10px; /* 设置间隔 */
+        align-items: stretch; /* 链接在纵向上拉伸填满 */
+        width: 100%; /* 导航栏占满屏幕宽度 */
+    }
+
+    .navbar-item a {
+        text-align: left; /* 手机端文字靠左 */
+        padding: 15px 20px; /* 调整内边距 */
+    }
+}
+/* Main Content Styles */
+main {
+    padding: 20px;
+}
+
+/* 父容器的样式 */
+.content-wrapper {
+    display: flex;
+    gap: 20px; /* 设置子元素间距 */
+}
+
+/* 轮番图部分 */
+#carousel {
+    flex: 0 0 70%; /* 占70%的宽度 */
+    position: relative;
+    height: 600px; /* 固定高度 */
+    overflow: hidden;
+}
+
+.carousel-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.carousel-item.active {
+    opacity: 1;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel-controls {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+}
+
+.carousel-controls button {
+    padding: 10px 20px;
+    background-color: #2a814e;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+.carousel-indicators {
+    display: flex;
+    gap: 10px;
+    position: absolute;
+    bottom: 2px;
+    right: 80%;
+    transform: translateX(-50%);
+}
+
+.indicator {
+    width: 15px;
+    height: 15px;
+    background-color: #999;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.indicator:hover {
+    background-color: #000;
+}
+
+.indicator.active {
+    background-color: #f5f5f5;
+}
+
+/* 新闻资讯部分 */
+.news-section {
+    flex: 0 0 30%; /* 占30%的宽度 */
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+.news-section h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.news-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.news-section ul li {
+    margin-bottom: 10px;
+}
+
+.news-section ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.news-section ul li a:hover {
+    text-decoration: underline;
+    color: #2a814e;
+}
+
+/* 产品与文创 */
+.product-info {
+    margin-bottom: 20px;
+}
+
+.product {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.image {
+    flex: 1 1 60%;
+    height: 150px;
+    background-color: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.image img {
+    max-width: 100%;
+    height: auto;
+}
+
+.desc {
+    flex: 1 1 35%;
+    padding: 10px;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.desc .name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #007BFF;
+}
+
+/* About Section */
+.about {
+    margin-bottom: 20px;
+}
+
+.contact-info {
+    margin-top: 10px;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .carousel {
+        width: 100%;
+    }
+
+    .slides img {
+        height: auto; /* Ensure images scale correctly */
+    }
+
+    .product {
+        flex-direction: column;
+    }
+
+    .product .image, .product .desc {
+        flex: none;
+        width: 100%;
+        margin: 0;
+    }
+
+    .product .image {
+        height: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header, .nav, .main {
+        padding: 10px;
+    }
+
+    .search {
+        width: 100%;
+    }
+
+    .news-list a {
+        font-size: 14px;
+    }
+}
