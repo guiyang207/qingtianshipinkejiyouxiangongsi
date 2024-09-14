@@ -4,6 +4,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    overflow-x: hidden; /* 禁止左右滑动 */
 }
 
 /* Header Styles */
@@ -136,7 +137,16 @@ main {
     display: flex;
     gap: 20px; /* 设置子元素间距 */
 }
-
+.section {
+    width: 100%;  /* 确保 section 占满屏幕宽度 */
+    padding: 20px; /* 给内容增加一些内边距 */
+    box-sizing: border-box; /* 确保 padding 不会影响宽度 */
+}
+.main-content {
+    width: 100%;
+    padding: 0;
+    margin: 0 auto;
+}
 /* 轮番图部分 */
 #carousel {
     flex: 0 0 70%; /* 占70%的宽度 */
@@ -384,5 +394,7 @@ main {
     display: flex;
     flex-direction: column;
     padding: 20px;
+    margin: 0 auto;
+    max-width: 100%; /* 确保容器最大宽度为浏览器的100% */
     margin: 0 auto;
 }
