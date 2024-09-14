@@ -52,7 +52,24 @@ header {
     padding: 10px;
     width: 300px;
 }
+/* 手机端调整 */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
 
+    .logo {
+        max-width: 100px; /* 手机端 logo 的最大宽度 */
+    }
+
+    .company-name {
+        font-size: 24px; /* 手机端字体大小 */
+        margin-top: 10px;
+        font-family: 'KaiTi', '楷体', serif; /* 楷书字体 */
+    }
+}
 /* 导航栏样式 */
 .navbar {
     background-color: #9ac7ad; /* 导航栏背景颜色 */
