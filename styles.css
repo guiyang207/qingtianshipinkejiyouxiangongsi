@@ -299,7 +299,6 @@ main {
         flex: 1 1 100%; /* 手机端占满100%宽度 */
         height: 300px; /* 手机端轮播图高度 */
         overflow: hidden; /* 隐藏溢出的部分 */
-        position: relative; /* 确保正确显示 */
     }
 
     .carousel-item {
@@ -310,10 +309,12 @@ main {
         height: 100%;
         opacity: 0;
         transition: opacity 0.5s ease-in-out;
+        display: none; /* 初始状态下隐藏所有轮播图项 */
     }
 
     .carousel-item.active {
         opacity: 1;
+        display: block; /* 仅显示当前活动项 */
     }
 
     .carousel-controls {
@@ -325,19 +326,6 @@ main {
         bottom: 10px;
         right: 50%;
         transform: translateX(50%);
-    }
-
-    .news-section {
-        flex: 1 1 100%; /* 手机端占满100%宽度 */
-        padding: 15px;
-    }
-
-    .news-section h2 {
-        font-size: 22px; /* 手机端标题字体大小 */
-    }
-
-    .news-section ul li {
-        font-size: 16px; /* 手机端的文字大小调整 */
     }
 }
 /* 产品与文创 */
