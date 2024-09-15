@@ -261,7 +261,14 @@ main {
 
     .carousel-item {
         position: relative; /* 移除绝对定位 */
-        display: block; /* 直接显示 */
+        /* 去掉 display: block */
+        opacity: 0; /* 使用透明度隐藏非活动图片 */
+        display: none; /* 隐藏非活动项 */
+    }
+
+    .carousel-item.active {
+        opacity: 1;
+        display: block; /* 仅显示活动项 */
     }
 
     .carousel-controls {
@@ -275,7 +282,6 @@ main {
         transform: translateX(50%);
     }
 }
-
 /* 新闻资讯部分 */
 .news-section {
     flex: 0 0 30%; /* 占30%的宽度 */
