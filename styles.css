@@ -1,0 +1,762 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    overflow-x: hidden; /* 禁止水平滚动 */
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden; /* 禁止左右滑动 */
+}
+body {
+    font-family: 'Noto Sans', Arial, sans-serif; /* 设置主要字体 */
+}
+
+.company-name, .desc .name, .section-title h2 {
+    font-family: 'KaiTi', '楷体', serif; /* 如果希望继续使用楷体，保留这一行 */
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f4f4f4;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.company-name {
+    flex-grow: 1;
+    font-size: 40px;
+    font-family: 'KaiTi', '楷体', serif; /* 楷书字体 */
+    text-align: left; 
+}
+
+.search {
+    padding: 8px 12px; /* 调整内边距 */
+    border: 1px solid #ccc; /* 添加边框 */
+    border-radius: 4px; /* 圆角边框 */
+    font-size: 16px; /* 调整字体大小 */
+    width: 300px;
+    max-width: 100%; /* 确保在小屏幕上不会超出容器 */
+    box-sizing: border-box; /* 包括内边距和边框在内 */
+}
+
+/* 手机端调整 */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .logo {
+        width: 80px; /* 调整 logo 在手机端的大小 */
+        height: 80px;
+        margin-right: 0; /* 去掉右边距 */
+        margin-bottom: 10px; /* 增加 logo 和公司名之间的间距 */
+    }
+
+    .company-name {
+        font-size: 35px; /* 手机端字体大小 */
+        margin-top: 10px;
+        font-family: 'KaiTi', '楷体', serif; /* 楷书字体 */
+    }
+
+    .search {
+        width: 90%; /* 手机端搜索框宽度调整为 90% */
+        max-width: 300px; /* 设置搜索框最大宽度 */
+        margin-top: 10px; /* 搜索框与其他元素间的间距 */
+    }
+}
+/* 导航栏样式 */
+.navbar {
+    background-color: #9ac7ad; /* 导航栏背景颜色 */
+    padding: 10px 20px; /* 内边距 */
+}
+
+/* 导航列表样式 */
+.navbar-list {
+    display: flex; /* 使用Flexbox布局 */
+    gap: 20px; /* 设置文字间隔 */
+    list-style: none; /* 去掉默认的列表样式 */
+    padding: 0;
+    margin: 0;
+}
+
+/* 导航栏样式 */
+.navbar {
+    background-color: #2a814e; /* 导航栏背景颜色 */
+    padding: 10px 20px; /* 导航栏上下和左右的内边距 */
+}
+
+/* 导航列表样式 */
+.navbar-list {
+    display: flex; /* 使用Flexbox布局 */
+    justify-content: space-between; /* 在导航栏中均匀分布 */
+    align-items: center; /* 垂直居中对齐 */
+    list-style: none; /* 去掉默认的列表样式 */
+    padding: 0; /* 去掉默认的内边距 */
+    margin: 0; /* 去掉默认的外边距 */
+}
+
+/* 导航项样式 */
+.navbar-item {
+    position: relative; /* 相对定位用于动画 */
+}
+
+/* 链接样式 */
+.navbar-item a {
+    text-decoration: none; /* 去掉下划线 */
+    color: #fff; /* 文字颜色 */
+    font-size: 18px; /* 文字大小 */
+    padding: 10px 15px; /* 内边距 */
+    transition: color 0.3s ease, transform 0.3s ease; /* 添加过渡效果 */
+    display: block; /* 链接填满导航项 */
+    text-align: center; /* 文字居中 */
+}
+
+/* 链接悬停效果 */
+.navbar-item a:hover {
+    color: #ffda79; /* 悬停时文字颜色变化 */
+    transform: translateY(-5px); /* 悬停时文字上移效果 */
+}
+
+/* 悬停动画下划线效果 */
+.navbar-item a::after {
+    content: ''; /* 添加伪元素 */
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #ffda79; /* 下划线颜色 */
+    transform: scaleX(0); /* 初始状态下缩放为0 */
+    transition: transform 0.3s ease; /* 添加动画过渡 */
+}
+
+/* 悬停时下划线动画 */
+.navbar-item a:hover::after {
+    transform: scaleX(1); /* 悬停时下划线展开 */
+}
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .navbar-list {
+        flex-direction: column; /* 手机端将导航变为纵向排列 */
+        gap: 10px; /* 设置间隔 */
+        align-items: stretch; /* 链接在纵向上拉伸填满 */
+        width: 100%; /* 导航栏占满屏幕宽度 */
+    }
+
+    .navbar-item a {
+        text-align: left; /* 手机端文字靠左 */
+        padding: 15px 20px; /* 调整内边距 */
+    }
+}
+/* Main Content Styles */
+main {
+    padding: 20px;
+}
+
+/* 父容器的样式 */
+.content-wrapper {
+    display: flex;
+    gap: 20px; /* 设置子元素间距 */
+    flex-wrap: nowrap; /* 禁止换行，确保并列 */
+}
+
+/* 轮播图部分 */
+#carousel {
+    flex: 0 0 70%; /* 电脑端占70%的宽度 */
+    position: relative;
+    height: 600px; /* 电脑端固定高度 */
+    overflow: hidden;
+}
+
+.carousel-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;  /* 图片默认不可见 */
+    transition: opacity 0.5s ease-in-out; /* 缓冲动画 */
+    z-index: 1;  /* 确保所有图片在同一个层级 */
+}
+
+.carousel-item.active {
+    opacity: 1;  /* 激活的图片可见 */
+    z-index: 2;  /* 确保激活的图片在最上层 */
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel-controls {
+    position: absolute;
+    bottom: 20px; /* 调整按钮位置 */
+    right: 20px;
+    display: flex;
+    align-items: center; /* 垂直居中对齐 */
+    gap: 10px; /* 添加按钮和指示点之间的间隔 */
+    z-index: 10; /* 确保按钮在图片上方 */
+}
+
+.carousel-controls button {
+    padding: 10px 20px;
+    background-color: #2a814e;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.carousel-indicators {
+    display: flex;
+    gap: 10px;
+    position: relative; /* 使用相对定位 */
+    margin-right: auto; /* 将指示点放在左侧 */
+    z-index: 10; /* 确保指示点在图片上方 */
+}
+
+.indicator {
+    width: 15px;
+    height: 15px;
+    background-color: #999;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.indicator.active {
+    background-color: #f5f5f5;
+}
+
+/* 手机端调整 */
+@media (max-width: 768px) {
+    #carousel {
+        flex: 1 1 100%; /* 手机端占满100%宽度 */
+        height: 300px; /* 手机端轮播图高度 */
+    }
+
+    .carousel-item {
+        position: relative; /* 移除绝对定位 */
+        opacity: 0; /* 使用透明度隐藏非活动图片 */
+        display: none; /* 隐藏非活动项 */
+        height: 300px; /* 统一高度 */
+        justify-content: center;
+        align-items: center;
+        overflow: hidden; /* 隐藏超出部分 */
+        transition: opacity 0.5s ease-in-out; /* 添加过渡效果 */
+    }
+
+    .carousel-item.active {
+        opacity: 1;
+        display: block; /* 仅显示活动项 */
+    }
+  .carousel-item img {
+        width: 100%; /* 适应容器宽度 */
+        height: 100%; /* 统一高度 */
+        object-fit: cover; /* 保持图片比例，裁剪多余部分 */
+    }
+    .carousel-controls {
+        bottom: 10px;
+        right: 10px;
+    }
+
+    .carousel-indicators {
+        bottom: 5px;
+        right: 20%;
+        transform: translateX(50%);
+    }
+}
+/* 新闻资讯部分 */
+.news-section {
+    flex: 0 0 30%; /* 占30%的宽度 */
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
+}
+
+.news-section h2 {
+    font-size: 30px;
+    margin-bottom: 15px;
+    color: #2a814e; /* 标题颜色 */
+}
+
+.news-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.news-section ul li {
+    margin-bottom: 12px;
+    font-size: 24px;
+    line-height: 1.5;
+}
+
+.news-section ul li a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s ease, text-decoration 0.3s ease; /* 添加过渡效果 */
+}
+
+.news-section ul li a:hover {
+    text-decoration: underline;
+    color: #2a814e; /* 悬停时的颜色变化 */
+}
+
+/* 手机端调整 */
+@media (max-width: 768px) {
+    .content-wrapper {
+        flex-wrap: wrap; /* 手机端允许换行 */
+    }
+
+    #carousel {
+        flex: 1 1 100%; /* 手机端占满100%宽度 */
+        height: 300px; /* 手机端轮播图高度 */
+    }
+
+    .news-section {
+        flex: 1 1 100%; /* 手机端新闻资讯占满100%宽度 */
+        padding: 15px;
+    }
+}
+/* 产品与文创 */
+.product-info {
+    margin-bottom: 20px;
+}
+/* 标题样式，左对齐并添加动画 */
+.section-title {
+    text-align: left; /* 文字左对齐 */
+    margin-bottom: 20px;
+    overflow: hidden; /* 防止动画溢出 */
+    font-family: 'KaiTi', '楷体', serif; /* 楷体字体 */
+  }
+  
+  .section-title h2 {
+    font-size: 40px;
+    color: #2a814e;
+    padding:15px;
+    border-bottom: 3px solid #2a814e;
+    display: inline-block;
+    animation: slideIn 1s ease-out; /* 添加滑入动画 */
+  }
+  /* 文创内容整体样式 */
+  .product-section {
+      width: 100%;
+      margin: 0 auto;
+  }
+/* 文创内容 */
+#creative-products {
+    padding: 20px;
+    background-color: #efefef;
+}
+
+.product {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+.image {
+    flex: 1 1 60%;
+    background-color: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    max-width: 700px;
+    max-height:400px ;
+}
+.image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.image img:hover {
+    transform: scale(1.05); /* 悬停时图片稍微放大 */
+}
+/* 在桌面端添加左边距 */
+@media (min-width: 769px) {
+      .image {
+        margin-left: 20px; /* 添加左边距 */
+      }
+    }
+.desc {
+    flex: 1 1 35%;
+    padding: 10px;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.desc .name {
+    font-size: 40px;
+    font-weight: bold;
+    color: #2182dd;
+    font-family: 'KaiTi', '楷体', serif; /* 楷体字体 */
+}
+.desc h2 {
+    font-size: 28px;
+    font-family: 'KaiTi', '楷体', serif; /* 楷体字体 */
+        font-weight: normal; /* 取消加粗 */
+
+}
+.product:hover .image img {
+    transform: scale(1.05);
+}
+
+.image img.enlarged {
+    cursor: zoom-out;
+    transform: scale(1.5);
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.overlay img {
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.overlay.active {
+    display: flex;
+}
+
+/* 弹窗部分 */
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 10000;
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal img {
+    max-width: 90%;
+    max-height: 90%;
+    border: 3px solid #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.modal:target {
+    display: flex; /* 点击时弹窗显示 */
+}
+
+
+
+/* 动画 */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 响应式布局，适应手机端 */
+@media (max-width: 768px) {
+    .product {
+        flex-direction: column;
+    }
+
+    .image {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .desc {
+        flex: 1 1 100%;
+    }
+    .section-title{
+        font-family: 'KaiTi', '楷体', serif; /* 楷书字体 */
+    }
+    .desc .name{
+        font-family: 'KaiTi', '楷体', serif; /* 楷书字体 */
+    }
+    .desc h2{
+        font-family: 'KaiTi', '楷体', serif; /* 楷书字体 */
+    }
+}
+  /* 按钮样式 */
+  button {
+      margin-top: 10px;
+      padding: 8px 16px;
+      background-color: #207bdc;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+      background-color: #22ba7d;
+  }
+  
+  /* 响应式调整：针对屏幕宽度小于768px的手机端样式 */
+  @media (max-width: 768px) {
+      .product {
+          flex-direction: column;
+      }
+  
+      .image {
+  flex: 1 1 100%;
+          height: auto;
+          margin-right: 0;
+          margin-bottom: 10px;
+      }
+  
+      .desc {
+          flex: 1 1 100%;
+      }
+  }
+  
+/* About Section */
+.about {
+ background-color: #f9f9f9;
+ padding: 20px;
+ margin-bottom: 20px;
+ font-family: 'KaiTi', '楷体', serif; /* 楷体字体 */
+    }
+    
+    .about h2 {
+ font-size: 36px; /* 加大标题字体 */
+ color: #333;
+ text-align: left;
+ margin-bottom: 15px;
+    }
+    
+    .about p {
+ font-size: 20px; /* 加大段落字体 */
+ color: #666;
+    }
+    
+    /* Contact Info Section */
+    .contact-info {
+ margin-top: 20px;
+    }
+    
+    .contact-item {
+ display: flex;
+ align-items: center;
+ margin-bottom: 15px;
+ border-bottom: 1px solid #ddd; /* 底部边框增加分隔 */
+ padding-bottom: 10px;
+    }
+    
+    /* Fixed Image Size */
+    .contact-item img {
+ width: 60px; /* 加大图片尺寸 */
+ height: 60px;
+ margin-right: 15px;
+ object-fit: cover;
+ border-radius: 50%; /* 圆形图标 */
+ cursor: pointer; /* 鼠标悬浮时显示手型，表示可点击 */
+    }
+    
+    .contact-item p {
+ font-size: 20px; /* 加大字体 */
+ color: #333;
+    }
+    
+    /* Modal Styles for Image Zoom */
+    .modal {
+ display: none; /* 默认隐藏 */
+ position: fixed;
+ z-index: 999;
+ left: 0;
+ top: 0;
+ width: 100%;
+ height: 100%;
+ overflow: auto;
+ background-color: rgba(0, 0, 0, 0.8);
+    }
+    
+    .modal-content {
+ margin: auto;
+ display: block;
+ max-width: 80%;
+ max-height: 80%;
+    }
+    
+    .close {
+ position: absolute;
+ top: 20px;
+ right: 35px;
+ color: white;
+ font-size: 40px;
+ font-weight: bold;
+ cursor: pointer;
+    }
+    
+    .close:hover,
+    .close:focus {
+ color: #bbb;
+ text-decoration: none;
+ cursor: pointer;
+    }
+    
+    /* Mobile Optimization */
+    @media (max-width: 768px) {
+ .about {
+   text-align: center;
+   font-family: 'KaiTi', '楷体', serif; /* 楷书字体 */
+ }
+    
+ .about h2 {
+   font-size: 32px;
+   font-family: 'KaiTi', '楷体', serif; /* 楷书字体 */
+ }
+    
+ .contact-item {
+   flex-direction: column;
+ text-align: center;
+ }
+    
+ .contact-item img {
+   margin-bottom: 10px;
+ }
+    
+ .contact-item p {
+   font-size: 18px;
+ }
+    }
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .carousel {
+        width: 100%;
+    }
+
+    .slides img {
+        height: auto; /* Ensure images scale correctly */
+    }
+
+    .product {
+        flex-direction: column;
+    }
+
+    .product .image, .product .desc {
+        flex: none;
+        width: 100%;
+        margin: 0;
+    }
+
+    .product .image {
+        height: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header, .nav, .main {
+        padding: 10px;
+    }
+
+    .search {
+        width: 100%;
+    }
+
+    .news-list a {
+        font-size: 14px;
+    }
+}
+/* 响应式设计 - 手机端优化 */
+@media (max-width: 768px) {
+    /* 导航栏调整 */
+    .navbar-list {
+        flex-direction: column; /* 导航项纵向排列 */
+        align-items: center; /* 居中对齐 */
+        gap: 10px; /* 增加导航项间距 */
+    }
+
+    /* 图片和轮播图 */
+    #carousel {
+        width: 100%; /* 轮播图占满屏幕宽度 */
+        height: auto; /* 高度自适应 */
+    }
+
+    .carousel-item img {
+        object-fit: cover; /* 确保图片不变形 */
+    }
+
+    /* 字体和间距 */
+    body {
+        font-size: 1rem; /* 使用相对单位，适应屏幕尺寸 */
+        line-height: 1.5; /* 增加行高 */
+    }
+
+    /* 按钮和交互元素 */
+    .carousel-controls button {
+        padding: 12px 24px; /* 增大按钮尺寸 */
+        font-size: 1rem; /* 调整按钮字体大小 */
+    }
+}
+
+/* 调整布局对齐 */
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 100%; /* 确保容器最大宽度为浏览器的100% */
+    margin: 0 auto;
+}
