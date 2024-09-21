@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>青甜食品科技有限公司</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <img src="photos\图片1.png" alt="Company Logo">
+        </div>
+        <div class="company-name">青甜食品科技有限公司</div>
+        <input type="text" class="search" placeholder="搜索">
+    </header>
+
+   <!-- 导航栏部分 -->
+<nav class="navbar">
+    <ul class="navbar-list">
+        <li class="navbar-item"><a href="#">首页</a></li>
+        <li class="navbar-item"><a href="#">特色展厅</a></li>
+        <li class="navbar-item"><a href="#">文创中心</a></li>
+        <li class="navbar-item"><a href="#">健康食谱</a></li>
+        <li class="navbar-item"><a href="#">高青资讯</a></li>
+        <li class="navbar-item"><a href="#">关于我们</a></li>
+    </ul>
+</nav>
+<!-- Main Content -->
+<main>
+    <section class="gallery">
+        <div class="content-wrapper">
+            <!-- 轮番图部分 -->
+            <div id="carousel">
+                <div class="carousel-item active">
+                    <img src="photos\图片2.png" alt="Image 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="photos\图片3.png" alt="Image 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="photos\图片4.png" alt="Image 3">
+                </div>
+                <!-- 其他轮播图项 -->
+                <div class="carousel-controls">
+                    <div class="carousel-indicators">
+                        <span class="indicator active"></span>
+                        <span class="indicator"></span>
+                        <span class="indicator"></span>
+                        <!-- 其他指示点 -->
+                    </div>
+                    <button id="prevBtn">&lt;</button>
+                    <button id="nextBtn">&gt;</button>
+                </div>
+            </div>
+
+            <!-- 新闻资讯部分 -->
+            <div class="news-section">
+                <h2>新闻资讯</h2>
+                <ul>
+                    <li><a href="#">新闻1: 公司最新动态</a></li>
+                    <li><a href="#">新闻2: 产品发布会回顾</a></li>
+                    <li><a href="#">新闻3: 合作伙伴签约仪式</a></li>
+                    <!-- 其他新闻项 -->
+                </ul>
+            </div>
+        </div>
+    </section>
+</main> 
+<div class="product-section">
+     <div class="section-title">
+        <h2>产品与文创</h2> 
+      </div>
+</div>
+            <div class="product">
+                <div class="image">
+                    <img data-src="photos\图片5.png" alt="小龙虾麻薯礼盒装" class="lazy" loading="lazy">
+                </div>
+                <div class="desc">
+                    <div class="name">小龙虾麻薯礼盒装</div>
+                    <h2>鲜香小龙虾，软糯麻薯心。</h2>
+                    <h2>全新滋味，小龙虾麻薯，一口惊艳，双重满足，带你领略舌尖上的奇妙之旅。</h2>
+                    <button>立即购买</button>
+                </div>
+            </div>
+            <div class="product">
+                <div class="image">
+                    <img data-src="photos\图片6.png" alt="最新口味推出" class="lazy" loading="lazy">
+                </div>
+                <div class="desc">
+                    <div class="name">最新口味推出</div>
+                    <h2>邂逅美味，畅享多彩。</h2>
+                    <h2> 红丝绒小龙虾麻薯，尽显奢华口感；</h2>
+                    <h2>抹茶小龙虾麻薯，清新滋味在舌尖；</h2>
+                    <h2> 紫薯小龙虾麻薯，天然香甜绽味蕾；</h2>
+                     <h2> 原味小龙虾麻薯，纯粹之美动人心。</h2>
+                    <button>立即购买</button>
+                </div>
+            </div>
+            <div class="product">
+                <div class="image">
+                    <img data-src="photos\图片7.png" alt="“甘棠蝉青”文创产品" class="lazy" loading="lazy">
+                </div>
+                <div class="desc">
+                    <div class="name">“甘棠蝉青”文创产品</div>
+                    <h2>金蝉鸣夏，文创绽华。</h2>
+                    <h2>金蝉文创，以灵动之姿承载历史底蕴，以精巧之艺展现文化魅力。</h2>
+                    <h2>让金蝉文创伴你，在生活的每一处细节中，感悟传统与现代的完美融合。</h2>
+                    <button>立即购买</button>
+                </div>
+            </div>
+
+            <!-- 模态弹窗部分 -->
+   <div id="modal1" class="modal">
+                <span class="close-modal" onclick="closeModal()">X</span>
+                <img src="photos\图片5.png" alt="文创产品A">
+            </div>
+        
+        
+            <div id="modal2" class="modal">
+                <span class="close-modal" onclick="closeModal()">X</span>
+                <img src="photos\图片6.png" alt="文创产品A">
+            </div>
+        
+            <div id="modal3" class="modal">
+                <span class="close-modal" onclick="closeModal()">X</span>
+                <img src="photos\图片7.png" alt="文创产品B">
+            </div>
+<!-- About Section -->
+<section class="about">
+ <h2>关于我们</h2>
+ <p>欢迎联系烟小暖有限责任公司，我们期待与您的合作。</p >
+ <div class="contact-info">
+    <div class="contact-item">
+        <p><strong>邮箱:</strong>2795559648@qq.com</p >
+       </div>
+   <div class="contact-item">
+    <!-- 照片省略<img src="photos\微信图片_20240814201837.jpg" alt="WeChat" class="zoomable"> -->
+    <p><strong>微信:</strong> WB_WGWYG</p >
+   </div>
+   <div class="contact-item">
+    <!-- 照片省略<img src="photos\微信图片_20240814201837.jpg" alt="QQ" class="zoomable"> -->
+    <p><strong>QQ:</strong>2795559648</p >
+   </div>
+ </div>
+    </section>
+    
+    <!-- Modal for Image Zoom -->
+    <div id="imageModal" class="modal">
+ <span class="close">&times;</span>
+ <img class="modal-content" id="modalImg">
+    </div>
+
+
+    <script src="js\script.js"></script>
+    <script src="js\lanjiazai.js"></script>
+    <script src="js\fangda.js"></script>
+    <script src="js\fangda2.js"></script>
+
+</body>
+</html>
