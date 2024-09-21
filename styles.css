@@ -268,7 +268,7 @@ main {
 }
 
 /* 手机端调整 */
-@media (max-width: 768px) {
+@media only screen and (max-width: 768px) {
     #carousel {
         flex: 1 1 100%; /* 手机端占满100%宽度 */
         height: 300px; /* 手机端轮播图高度 */
@@ -304,14 +304,20 @@ main {
         display: block; /* 激活时显示视频 */
     }
     .carousel-controls {
-        bottom: 10px; /* 调整底部间距 */
-        right: 10px;
+        bottom: 10px; /* 上移按钮位置 */
+        right: 10px; /* 上移按钮位置 */
     }
 
     .carousel-controls button {
-        padding: 5px 8px; /* 缩小内边距 */
-        font-size: 12px; /* 减小字体大小 */
-        border-radius: 4px; /* 使按钮更加圆滑 */
+        padding: 5px; /* 减小内边距 */
+        font-size: 12px; /* 减小文字大小 */
+        width: 30px; /* 固定宽度 */
+        height: 30px; /* 固定高度 */
+        border: none; /* 去掉边框 */
+        border-radius: 4px; /* 圆角 */
+        background-color: #df4e2d; /* 按钮背景色 */
+        color: white; /* 按钮文字颜色 */
+    }
     }
 
     .carousel-indicators {
