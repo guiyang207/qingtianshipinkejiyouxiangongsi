@@ -16,14 +16,6 @@ body {
     box-sizing: border-box;
     overflow-x: hidden; /* 禁止左右滑动 */
 }
-body {
-    font-family: 'Noto Sans', Arial, sans-serif; /* 设置主要字体 */
-    font-size: 16px; /* 默认大小，确保在手机端一致 */
-}
-
-.company-name, .desc .name, .section-title h2 {
-    font-family: 'KaiTi', '楷体', serif; /* 使用楷体 */
-}
 @media only screen and (max-width: 768px) {
     body {
         font-family: 'Noto Sans', Arial, sans-serif; /* 默认字体 */
