@@ -18,12 +18,19 @@ body {
 }
 body {
     font-family: 'Noto Sans', Arial, sans-serif; /* 设置主要字体 */
+    font-size: 16px; /* 默认大小，确保在手机端一致 */
 }
 
 .company-name, .desc .name, .section-title h2 {
-    font-family: 'KaiTi', '楷体', serif; /* 如果希望继续使用楷体，保留这一行 */
+    font-family: 'KaiTi', '楷体', serif; /* 使用楷体 */
 }
 
+@media (max-width: 768px) {
+    body {
+        font-family: 'KaiTi', '楷体', serif; /* 手机端字体为楷体 */
+        font-size: 16px; /* 确保手机端与电脑端一致 */
+    }
+}
 /* Header Styles */
 header {
     display: flex;
