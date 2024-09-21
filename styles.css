@@ -307,12 +307,16 @@ main {
         bottom: 10px;
         right: 10px;
     }
+.carousel-controls button {
+        padding: 5px 10px; /* 调整按钮的内边距，减少尺寸 */
+        font-size: 12px; /* 调整按钮文字的大小 */
+    }
 
-    .carousel-indicators {
-        bottom: 5px;
-        right: 20%;
-        transform: translateX(50%);
-    }
+    .carousel-indicators {
+        bottom: 5px;
+        right: 20%;
+        transform: translateX(50%);
+    }
 }
 /* 新闻资讯部分 */
 .news-section {
