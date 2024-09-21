@@ -24,11 +24,16 @@ body {
 .company-name, .desc .name, .section-title h2 {
     font-family: 'KaiTi', '楷体', serif; /* 使用楷体 */
 }
-
-@media (max-width: 768px) {
+@media only screen and (max-width: 768px) {
     body {
-        font-family: 'KaiTi', '楷体', serif; /* 手机端字体为楷体 */
-        font-size: 16px; /* 确保手机端与电脑端一致 */
+        font-family: 'Noto Sans', Arial, sans-serif; /* 默认字体 */
+    }
+
+    /* 仅对需要使用楷体的元素进行设置 */
+    .company-name,
+    .desc .name,
+    .section-title h2 {
+        font-family: 'KaiTi', '楷体', serif; /* 设定为楷体 */
     }
 }
 /* Header Styles */
