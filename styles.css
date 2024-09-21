@@ -75,7 +75,7 @@ header {
     }
 
     .company-name {
-        font-size: 40px; /* 手机端字体大小 */
+        font-size: 34px; /* 手机端字体大小 */
         margin-top: 10px;
         font-family: 'KaiTi', '楷体', serif; /* 楷书字体 */
     }
