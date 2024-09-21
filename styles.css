@@ -304,19 +304,27 @@ main {
         display: block; /* 激活时显示视频 */
     }
     .carousel-controls {
-        bottom: 10px;
+        bottom: 10px; /* 调整底部间距 */
         right: 10px;
     }
-.carousel-controls button {
-        padding: 5px 10px; /* 调整按钮的内边距，减少尺寸 */
-        font-size: 12px; /* 调整按钮文字的大小 */
-    }
 
-    .carousel-indicators {
-        bottom: 5px;
-        right: 20%;
-        transform: translateX(50%);
-    }
+    .carousel-controls button {
+        padding: 5px 8px; /* 缩小内边距 */
+        font-size: 12px; /* 减小字体大小 */
+        border-radius: 4px; /* 使按钮更加圆滑 */
+    }
+
+    .carousel-indicators {
+        gap: 5px; /* 减小指示点之间的间距 */
+        transform: translateX(-50%);
+        left: 50%; /* 居中 */
+        bottom: 10px; /* 调整底部距离 */
+    }
+
+    .indicator {
+        width: 10px; /* 减小指示点大小 */
+        height: 10px;
+    }
 }
 /* 新闻资讯部分 */
 .news-section {
